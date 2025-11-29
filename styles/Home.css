@@ -96,7 +96,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     background-color: #009e0f;
 }
 
@@ -133,16 +133,50 @@ nav {
     color: #ffff00;
 }
 
-.burger {
-    display: none;
-    background-color: transparent;
+.navbar-toggler {
+    border-color: white !important;
 }
 
-.burger div {
-    width: 25px;
-    height: 3px;
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* Sidebar toggle button in navbar (visible on mobile when < 900px) */
+.sidebar-toggle-navbar {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-left: auto;
+    padding: 6px;
+}
+
+.sidebar-toggle-navbar span {
+    width: 24px;
+    height: 2.5px;
     background-color: white;
-    margin: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Show navbar sidebar toggle on mobile */
+@media (max-width: 899px) {
+    .sidebar-toggle-navbar {
+        display: flex;
+    }
+}
+
+/* Animate the sidebar toggle button when the checkbox is checked */
+#sidebar-toggle:checked ~ .sidebar-toggle-navbar span:nth-child(1) {
+    transform: rotate(45deg) translate(9px, 9px);
+}
+
+#sidebar-toggle:checked ~ .sidebar-toggle-navbar span:nth-child(2) {
+    opacity: 0;
+}
+
+#sidebar-toggle:checked ~ .sidebar-toggle-navbar span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .body1-container {
@@ -180,6 +214,7 @@ nav {
     background-color: #ffd400;
 }
 
+
 .streak-blue {
     background-color: #0066cc;
 }
@@ -200,6 +235,64 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.sidebar-menu-toggle {
+    display: none;
+}
+
+.sidebar-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.sidebar-hamburger span {
+    width: 24px;
+    height: 2.5px;
+    background-color: #0066cc;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Show hamburger on mobile (< 900px) */
+@media (max-width: 899px) {
+    .sidebar-hamburger {
+        display: flex;
+    }
+    
+    /* Collapse sidebar buttons when hamburger is not checked */
+    .sidebar-menu-toggle:not(:checked) ~ .sidebar .side-label {
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+    
+    /* Show buttons vertically when checked */
+    .sidebar-menu-toggle:checked ~ .sidebar .side-label {
+        max-height: 100px;
+        opacity: 1;
+        padding: 10px 12px;
+        margin-bottom: 8px;
+        display: block;
+    }
+    
+    /* Animate hamburger when checked */
+    .sidebar-menu-toggle:checked ~ .sidebar .sidebar-hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .sidebar-menu-toggle:checked ~ .sidebar .sidebar-hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .sidebar-menu-toggle:checked ~ .sidebar .sidebar-hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
 }
 
 .main-container > input[type="radio"] {
@@ -288,3 +381,4 @@ a:focus, .side-label:focus, .nav-links a:focus {
     .sidebar { width: 100%; flex-direction: row; overflow-x: auto; gap: 10px; }
     .side-btn { flex: 0 0 auto; white-space: nowrap; }
 }
+
