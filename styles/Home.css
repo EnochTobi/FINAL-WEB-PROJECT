@@ -375,6 +375,80 @@ a:focus, .side-label:focus, .nav-links a:focus {
     .header-text h2 { font-size: 40px; }
 }
 
+/* Carousel styling - matches site theme, CSS only enhancements */
+.carouselExampleIndicators {
+    max-width: var(--max-width);
+    margin: 36px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card-bg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.carouselExampleIndicators .carousel-inner {
+    background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.02));
+}
+
+.carouselExampleIndicators .carousel-item {
+    height: 340px;
+}
+
+.carouselExampleIndicators .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.02) contrast(0.98);
+}
+
+/* indicators: subtle circles in theme colors */
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.25);
+    border: none;
+    transition: transform 200ms ease, background-color 200ms ease;
+}
+.carousel-indicators .active {
+    background-color: var(--accent-yellow);
+    transform: scale(1.15);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+}
+
+/* controls: use theme-tinted chevrons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+}
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffd400' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230066cc' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 14.354a.5.5 0 0 1 0-.708L10.293 8 4.646 2.354a.5.5 0 1 1 .708-.708l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708 0z'/%3E%3C/svg%3E");
+}
+
+/* caption style if using captions */
+.carousel-caption {
+    background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.15));
+    padding: 12px 18px;
+    border-radius: 8px;
+    left: 24px;
+    right: auto;
+    bottom: 24px;
+    text-align: left;
+}
+
+/* responsive carousel heights */
+@media (max-width: 900px) {
+    #carouselExampleIndicators .carousel-item { height: 220px; }
+}
+
+@media (max-width: 480px) {
+    #carouselExampleIndicators .carousel-item { height: 160px; }
+    .carousel-caption { font-size: 14px; left: 12px; right: 12px; }
+}
+
 /* small-screen adjustments */
 @media (max-width: 800px) {
     .main-container { flex-direction: column; padding: 20px; }
