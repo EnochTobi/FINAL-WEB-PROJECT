@@ -1,0 +1,180 @@
+:root{
+    --primary-green: #009e0f;
+    --accent-yellow: #ffd400;
+    --accent-blue: #002776;
+    --nav-height: 72px;
+    --card-bg: rgba(255,255,255,0.95);
+    --max-width: 1200px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--accent-blue);
+    color: #111;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--primary-green);
+    position: fixed;
+    border-bottom: #ffff00 2px solid;
+}
+
+.logo {
+    background-color: transparent;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    background-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    background-color: transparent;
+}
+
+.nav-links li {
+    background-color: transparent;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffff00;
+}
+
+.navbar-toggler {
+    border-color: white !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* Culture page carousel sizing */
+#cultureCarousel { 
+    max-height: 300px; 
+    overflow: hidden;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 10px;
+}
+#cultureCarousel .carousel-item { 
+    height: 300px; 
+}
+#cultureCarousel .carousel-item img { 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* Culture content section */
+.culture-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.culture-content h2 {
+    color: #003366;
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.culture-content > p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.culture-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.culture-card {
+    background: linear-gradient(135deg, #0066cc, #0080ff);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.culture-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.culture-card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (max-width: 899px) {
+    .sidebar-toggle-navbar {
+        display: flex;
+    }
+}
+
+@media (max-width: 899px) {
+    .sidebar-hamburger {
+        display: flex;
+    }
+    
+    /* Collapse sidebar buttons when hamburger is not checked */
+    .sidebar-menu-toggle:not(:checked) ~ .sidebar .side-label {
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+    
+    /* Show buttons vertically when checked */
+    .sidebar-menu-toggle:checked ~ .sidebar .side-label {
+        max-height: 100px;
+        opacity: 1;
+        padding: 10px 12px;
+        margin-bottom: 8px;
+        display: block;
+    }
+    
+    /* Animate hamburger when checked */
+    .sidebar-menu-toggle:checked ~ .sidebar .sidebar-hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .sidebar-menu-toggle:checked ~ .sidebar .sidebar-hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .sidebar-menu-toggle:checked ~ .sidebar .sidebar-hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}
