@@ -25,8 +25,61 @@ body {
     height: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
-;
 }
+
+/* smooth scrolling for in-page anchors */
+html {
+    scroll-behavior: smooth;
+}
+
+/* target offset so fixed navbar doesn't overlap anchors */
+.anchor-target {
+    scroll-margin-top: 110px; /* adjust to match your nav height + gap */
+}
+
+.card-link {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.detail-section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.back-link {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+/* Distinct backgrounds for each expanded detail container */
+.detail-section.detail-music {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff2cc 100%);
+    color: #1a1a1a;
+    border-left: 6px solid var(--accent-yellow);
+}
+
+.detail-section.detail-food {
+    background: linear-gradient(135deg, #f4fff6 0%, #e6fff0 100%);
+    color: #0b3a1a;
+    border-left: 6px solid var(--primary-green);
+}
+
+.detail-section.detail-art {
+    background: linear-gradient(135deg, #eef6ff 0%, #dfefff 100%);
+    color: #062343;
+    border-left: 6px solid var(--accent-blue);
+}
+
+/* Slightly increase padding on small screens for readability */
+@media (max-width: 600px) {
+    .detail-section { padding: 20px; margin: 20px 16px; }
+}
+
 nav {
     width: 100%;
     display: flex;
@@ -85,7 +138,8 @@ nav {
     overflow: hidden;
     margin: 20px auto;
     max-width: 900px;
-    border-radius: 10px;
+    padding: 0 40px;
+    border-radius: 25px;
 }
 #cultureCarousel .carousel-item { 
     height: 300px; 
@@ -110,7 +164,7 @@ nav {
     font-size: 32px;
     margin-bottom: 16px;
 }
-
+ 
 .culture-content > p {
     color: #333;
     font-size: 16px;
