@@ -86,9 +86,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    background-color: var(--primary-green);
-    position: fixed;
-    border-bottom: #ffff00 2px solid;
+    background-color: #009e0f;
 }
 
 .logo {
