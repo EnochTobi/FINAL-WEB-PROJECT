@@ -1,235 +1,399 @@
-:root{
-    --primary-green: grey;
-    --accent-yellow: #ffd400;
-    --accent-blue: #0066cc;
-    --nav-height: 72px;
-    --card-bg: rgba(255,255,255,0.95);
-    --max-width: 1200px;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--primary-green);
-    color: #111;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-}
-
-/* Navbar styles matching Home.css for consistent site header */
-nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-    background-color: #009e0f;
-}
-
-.logo {
-    background-color: transparent;
-}
-
-.logo-img {
-    height: 50px;
-    width: auto;
-    background-color: transparent;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    background-color: transparent;
-}
-
-.nav-links li {
-    background-color: transparent;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    background-color: transparent;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ffff00;
-}
-
-.navbar-toggler {
-    border-color: white !important;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-}
-
-/* Page header */
-header{padding:20px 24px;text-align:center;color:#fff}
-header h1{font-size:32px}
-
-/* Content container styled like Culture/Home cards */
-.climate-content{
-    max-width:var(--max-width);
-    margin:28px auto;
-    padding:30px;
-    background: var(--card-bg);
-    border-radius:10px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.12);
-}
-
-section
-{
-    margin-bottom:18px
-}
-
-.climate-content h2{
-    color:#003366;
-    font-size:28px;
-    margin-bottom:12px
-}
-
-.climate-image
-{
-    display:block;
-    max-width:20%;
-    height:auto;
-    border-radius:8px;
-    margin:8px auto;
-}
-
-.climate-content p
-{
-    padding:14px;
-    border-radius:8px;
-    line-height:1.6;
-    color:#222;
-    background:transparent
-}
-
-ul
-{
-    margin:12px 0 0 20px
-}
-
-li
-{
-    margin-bottom:8px
-}
-
-.fact{background:linear-gradient(135deg,#fff9e6,#fff2cc);border-left:6px solid var(--accent-yellow);padding:12px;border-radius:8px}
-
-a{color:var(--accent-blue);text-decoration:underline}
-
-@media (max-width:900px){
-    header h1{font-size:22px}
-    .climate-content{padding:18px;margin:12px}
-    .climate-content h2{font-size:20px}
-}
-
-.landmark-carousel {
-    position: relative;
-    max-width: 900px;
-    margin: 1.5rem auto;
-    padding: 0 2.5rem;
-}
-
-.carousel-track-container {
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    background: #fff;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.landmark-card {
-    flex: 0 0 100%;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.landmark-card img {
+body {
+    font-family: 'Exo 2', sans-serif;
+    background: linear-gradient(135deg, #f0fdf4 0%, #fffbeb 100%);
+    color: #2c3e50;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.atmos-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid #ffdf00;
+    position: fixed;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 156, 59, 0.1);
 }
 
-.landmark-card h3 {
-    margin: 0.75rem 1rem 0.25rem;
-    font-size: 1.05rem;
+.atmos-logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #002776;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.landmark-card p {
-    margin: 0 1rem 1rem;
+.atmos-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    margin-left: 2rem;
+    font-weight: 600;
+    transition: color 0.3s;
+    position: relative;
     font-size: 0.95rem;
-    line-height: 1.4;
-    background-color: #ccc;
 }
 
-.carousel-btn {
+.atmos-links a:hover,
+.atmos-links a.current-page {
+    color: #009c3b;
+}
+
+.atmos-links a::after {
+    content: '';
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.55);
-    border: none;
-    border-radius: 50%;
-    color: #fff;
-    width: 2.2rem;
-    height: 2.2rem;
-    border-radius: 50%;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffdf00;
+    transition: width 0.3s;
+}
+
+.atmos-links a:hover::after,
+.atmos-links a.current-page::after {
+    width: 100%;
+}
+
+.mobile-toggle {
+    display: none;
     cursor: pointer;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #009c3b;
+    margin: 5px 0;
+}
+
+.climate-hero-section {
+    height: 70vh;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Encontro_das_%C3%81guas_-_Manaus.jpg/1280px-Encontro_das_%C3%81guas_-_Manaus.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 0;
 }
 
-.carousel-btn.prev {
-    left: 0.5rem;
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 39, 118, 0.6) 0%, rgba(0, 156, 59, 0.7) 100%);
+    z-index: 1;
+}
+.hero-text-container {
+    position: relative;
+    z-index: 2;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 39, 118, 0.3);
+    max-width: 800px;
 }
 
-.carousel-btn.next {
-    right: 0.5rem;
+.hero-text-container h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    color: #ffdf00;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.carousel-dots {
+.hero-text-container p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+
+.bio-climate-expanse {
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.overview-stratum {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 5rem;
+    padding: 3rem;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-top: 6px solid #002776;
+}
+
+.overview-stratum h2 {
+    color: #009c3b;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.overview-stratum p {
+    font-size: 1.15rem;
+    color: #444;
+    line-height: 1.9;
+}
+
+.meteorological-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.zone-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 0.8rem;
+    flex-direction: column;
 }
 
-.carousel-dots .dot {
-    width: 10px;
-    height: 10px;
-    background: #ccc;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
+.zone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 156, 59, 0.1);
 }
 
-.carousel-dots .dot.active {
-    background: #333;
+.zone-card .card-header {
+    background: #f9f9f9;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid;
 }
 
-@media (min-width: 768px) {
-    .landmark-carousel {
-        padding: 0 1.5rem;
+.zone-card.equatorial .card-header {
+    border-bottom-color: #009c3b;
+}
+
+.zone-card.tropical .card-header {
+    border-bottom-color: #ffdf00;
+}
+
+.zone-card.semiarid .card-header {
+    border-bottom-color: #d4a017;
+}
+
+.zone-card.highland .card-header {
+    border-bottom-color: #2E8B57;
+}
+
+.zone-card.subtropical .card-header {
+    border-bottom-color: #002776;
+}
+
+.zone-card.atlantic .card-header {
+    border-bottom-color: #00BFFF;
+}
+
+.zone-card h3 {
+    font-size: 1.5rem;
+    color: #002776;
+    margin: 0;
+}
+
+.zone-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: white;
+    border: 1px solid #ddd;
+    color: #666;
+}
+
+.card-body {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body p {
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.climate-data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.data-point {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.data-point .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.data-point .value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #009c3b;
+}
+
+.seasonal-rhythm {
+    background: white;
+    padding: 4rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 39, 118, 0.08);
+    background: linear-gradient(to right, #ffffff, #f4fcf6);
+    position: relative;
+    border-left: 10px solid #009c3b;
+}
+
+.rhythm-content {
+    position: relative;
+    z-index: 2;
+}
+
+.rhythm-content h2 {
+    font-size: 2.2rem;
+    color: #002776;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.season-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.season-box {
+    flex: 1;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    position: relative;
+}
+
+.season-box.summer {
+    border-top: 4px solid #ffdf00;
+}
+
+.season-box.winter {
+    border-top: 4px solid #002776;
+}
+
+.season-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.season-box p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.climate-footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #009c3b;
+    color: white;
+    font-size: 1rem;
+    margin-top: 4rem;
+    border-top: 6px solid #ffdf00;
+}
+
+.climate-footer p {
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .atmos-nav {
+        padding: 1rem;
     }
 
-.carousel.btn {
-        width: 1.8rem;
-        height: 1.8rem;
-        font-size: 1.6rem
+    .atmos-links {
+        display: none;
     }
 
-    .landmark-card img {
-        height: 210px;
+    .mobile-toggle {
+        display: block;
+    }
+
+    .hero-text-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .bio-climate-expanse {
+        padding: 3rem 1.5rem;
+    }
+
+    .meteorological-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .season-container {
+        flex-direction: column;
+    }
+
+    .climate-data {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: left;
+    }
+
+    .data-point {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f5f5f5;
+        padding-bottom: 5px;
     }
 }
