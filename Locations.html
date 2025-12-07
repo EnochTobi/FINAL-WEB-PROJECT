@@ -5,47 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brazil - Location & Landmarks</title>
-        <!-- Site shared styles (navbar + variables) qqq-->
-        <link rel="stylesheet" href="styles/Home.css">
-    <link rel="stylesheet" href="styles/Locations.css">
+    <link rel="stylesheet" href="styles/location.css">
 </head>
 
 <body>
     <nav class="brazil-navbar">
         <div class="brazil-logo">Brazil</div>
-        <div class="brazil-hamburger" onclick="toggleMenu()">
+        <div class="brazil-hamburger">
             <div></div>
             <div></div>
             <div></div>
         </div>
         <ul class="brazil-nav-links">
-                <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="Locations.html">Locations</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="Climate.html">Climate</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="Culture.html">National Curios</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#">Economy</a></li>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="location.html" class="active">Location</a></li>
+            <li><a href="#">Climate</a></li>
+            <li><a href="culture.html">Natural Curious</a></li>
+            <li><a href="#">Economy</a></li>
         </ul>
     </nav>
 
-
     <header class="brazil-hero">
+        <div class="hero-breadcrumb">
+            <a href="#">Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <span class="breadcrumb-current">Location</span>
+        </div>
         <div class="brazil-hero-content">
             <h1>Brazil</h1>
             <p>Discover the vibrant heart of South America.</p>
         </div>
     </header>
 
-
     <main class="brazil-container">
         <section id="intro" class="brazil-section">
             <h2>About Brazil</h2>
             <p class="brazil-intro-text">
                 Brazil is the largest country in both South America and Latin America. It covers an area of 8,515,767
-                square kilometers (3,287,956 sq mi), with a population of over 217 million. Its capital is Brasília, and
-                its most populous city is São Paulo. The federation is composed of the union of the 26 states and the
+                square kilometers (3,287,956 sq mi), with a population of over 218.8 million. Its capital is
+                Brasília, and its most populous city is São Paulo. The federation is composed of the union of the 26
+                states and the
                 Federal District. It is the only country in the Americas to have Portuguese as an official language.
             </p>
         </section>
+
+        <section id="stats" class="brazil-section stats-section">
+            <h2>Brazil by Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🗺️</div>
+                    <div class="stat-number">8,515,767</div>
+                    <div class="stat-label">Square Kilometers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number">218,000,000</div>
+                    <div class="stat-label">Population</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏛️</div>
+                    <div class="stat-number">26</div>
+                    <div class="stat-label">States</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏙️</div>
+                    <div class="stat-number">5,570</div>
+                    <div class="stat-label">Cities</div>
+                </div>
+            </div>
+        </section>
+
         <section id="map" class="brazil-section">
             <h2>Location</h2>
             <p class="brazil-section-desc">Explore the vast geography of Brazil.</p>
@@ -57,6 +86,7 @@
                 </iframe>
             </div>
         </section>
+
         <section id="cities" class="brazil-section">
             <h2>Important Cities</h2>
             <div class="brazil-places-grid">
@@ -83,7 +113,7 @@
                         alt="Brasília">
                     <div class="brazil-card-content">
                         <h3>Brasília</h3>
-                        <p>Inaugurated as Brazil’s capital in 1960, it is a planned city distinguished by its white,
+                        <p>Inaugurated as Brazil's capital in 1960, it is a planned city distinguished by its white,
                             modern architecture, chiefly designed by Oscar Niemeyer.</p>
                     </div>
                 </div>
@@ -137,13 +167,6 @@
     <footer>
         <p>&copy; 2025 Brazil Project. All rights reserved.</p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.brazil-nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
 
 </body>
 
