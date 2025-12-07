@@ -67,49 +67,66 @@
         <img class="natural-features-image" src="./images/NaturalFeatures.jpg" alt="Natural features of Brazil">
         <p>Brazil boasts a diverse range of natural features, including the Amazon rainforest, Pantanal wetlands, Iguazu Falls, and the extensive coastline along the Atlantic Ocean. These features contribute to Brazil's rich biodiversity and ecological significance.</p>
     </section>
-<h2>
-    Major Natural Features
-</h2>
+    <h2 class="mt-4 mb-3">Major Natural Features</h2>
+    <h2 class="mt-4 mb-3">Major Natural Landmarks</h2>
 
-    <div class="landmark-carousel">
-        <button class="carousel-btn prev" aria-label="Previous slide"></button>
+<div id="landmarkCarousel" class="carousel slide" data-bs-ride="carousel">
+  
+  
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#landmarkCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#landmarkCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#landmarkCarousel" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#landmarkCarousel" data-bs-slide-to="3"></button>
+  </div>
 
-        <div class="carousel-track-container"></div>
-        <div class="carousel-track">
-        <article class="landmark-card">
-            <h3>Amazon Rainforest</h3>
-            <img src="./images/AmazonRainforest.jpg" alt="Amazon Rainforest">
-            <p>The Amazon rainforest is the largest tropical rainforest in the world, covering over 5.5 million square kilometers. It is home to an incredible variety of plant and animal species.</p>
-        </article>
 
-        <article class="landmark-card">
-            <h3>Iguazu Falls</h3>
-            <img src="./images/Iguazu Falls.jpg" alt="Iguazu Falls">
-            <p>Iguazu Falls is one of the largest and most impressive waterfall systems in the world, located on the border between Brazil and Argentina. It consists of approximately 275 individual falls.</p>
-        </article>
+  <div class="carousel-inner">
 
-        <article class="landmark-card">
-            <h3>Pantanal</h3>
-            <img src="./images/Pantanal.jpg" alt="Pantanal">
-            <p>The Pantanal is the world's largest tropical wetland area, known for its incredible biodiversity. It is a crucial habitat for many species of birds, fish, and mammals.</p>
-        </article>
-
-        <article class="landmark-card">
-            <h3>Lençóis Maranhenses</h3>
-            <img src="./images/Lencois.jpg" alt="Lençóis Maranhenses">
-            <p>Lençóis Maranhenses is a unique national park characterized by vast white sand dunes interspersed with seasonal freshwater lagoons, creating a stunning landscape.</p>
-        </article>
+    <div class="carousel-item active">
+      <img src="./images/Amazonrainforest.jpg" class="d-block w-100" alt="Amazon Rainforest">
+      <div class="carousel-caption bg-dark bg-opacity-50 p-2 rounded">
+        <h5>Amazon Rainforest</h5>
+        <p>The largest tropical rainforest in the world.</p>
+      </div>
     </div>
 
-    <button class="carousel-btn next" aria-label="Next slide"></button>
-
-    <div class="carousel-dots">
-        <button class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
-        <button class="dot" data-slide="1" aria-label="Go to slide 2"></button>
-        <button class="dot" data-slide="2" aria-label="Go to slide 3"></button>
-        <button class="dot" data-slide="3" aria-label="Go to slide 4"></button>
+    <div class="carousel-item">
+      <img src="./images/Pantanal.jpg" class="d-block w-100" alt="Pantanal">
+      <div class="carousel-caption bg-dark bg-opacity-50 p-2 rounded">
+        <h5>Pantanal</h5>
+        <p>The world’s largest tropical wetland area.</p>
+      </div>
     </div>
 
+    <div class="carousel-item">
+      <img src="./images/Iguazu Falls.jpg" class="d-block w-100" alt="Iguazu Falls">
+      <div class="carousel-caption bg-dark bg-opacity-50 p-2 rounded">
+        <h5>Iguazu Falls</h5>
+        <p>One of the largest and most impressive waterfall systems globally.</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="./images/Lencois.jpg" class="d-block w-100" alt="Lençóis Maranhenses">
+      <div class="carousel-caption bg-dark bg-opacity-50 p-2 rounded">
+        <h5>Lençóis Maranhenses</h5>
+        <p>A unique landscape of white sand dunes and blue lagoons.</p>
+      </div>
+    </div>
+
+  </div>
+
+ 
+  <button class="carousel-control-prev" type="button" data-bs-target="#landmarkCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#landmarkCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+</div>
 
     <section>
         <h2>Conservation Efforts</h2>
