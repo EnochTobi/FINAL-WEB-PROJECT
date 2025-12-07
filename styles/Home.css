@@ -580,6 +580,16 @@ nav {
     transition: transform 200ms ease, background-color 200ms ease;
 }
 
+footer {
+    background: linear-gradient(135deg, #009c3b 0%, #002776 100%);
+    color: white;
+    text-align: center;
+    padding: 32px;
+    margin-top: 32px;
+    font-size: 16px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .carousel-indicators .active {
     background-color: #ffd400;
     transform: scale(1.3);
