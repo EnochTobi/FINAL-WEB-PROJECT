@@ -70,26 +70,57 @@
         <p>Brazil is home to the Amazon rainforest, which produces about 20% of the world's oxygen and is often referred to as the "lungs of the Earth."</p>
     </section>
 
-    <p>For further climate information <a href="https://en.wikipedia.org/wiki/Climate_of_Brazil" target="_blank" rel="noopener noreferrer">Click Me</a>.</p>
+    <p>For further information about Brazil's climate, <a href="https://en.wikipedia.org/wiki/Climate_of_Brazil" target="_blank" rel="noopener noreferrer">Click Me</a>.</p>
 
-</main>
-
-<main class="Natural Features">
+    <hr>
     <section>
         <h2>Natural Features of Brazil</h2>
         <img class="natural-features-image" src="./images/NaturalFeatures.jpg" alt="Natural features of Brazil">
         <p>Brazil boasts a diverse range of natural features, including the Amazon rainforest, Pantanal wetlands, Iguazu Falls, and the extensive coastline along the Atlantic Ocean. These features contribute to Brazil's rich biodiversity and ecological significance.</p>
     </section>
+<h2>
+    Major Natural Features
+</h2>
 
-    <section>
-        <h2>Major Natural Landmarks</h2>
-        <ul>
-            <li><strong>Amazon Rainforest:</strong> The largest tropical rainforest in the world, home to countless species of flora and fauna.</li>
-            <li><strong>Pantanal:</strong> The world's largest tropical wetland area, known for its wildlife diversity.</li>
-            <li><strong>Iguazu Falls:</strong> One of the largest and most impressive waterfall systems globally, located on the border with Argentina.</li>
-            <li><strong>Lençóis Maranhenses:</strong> A unique landscape of white sand dunes interspersed with seasonal freshwater lagoons.</li>
-        </ul>
-    </section>
+    <div class="landmark-carousel">
+        <button class="carousel-btn prev" aria-label="Previous slide"></button>
+
+        <div class="carousel-track-container"></div>
+        <div class="carousel-track">
+        <article class="landmark-card">
+            <h3>Amazon Rainforest</h3>
+            <img src="./images/AmazonRainforest.jpg" alt="Amazon Rainforest">
+            <p>The Amazon rainforest is the largest tropical rainforest in the world, covering over 5.5 million square kilometers. It is home to an incredible variety of plant and animal species.</p>
+        </article>
+
+        <article class="landmark-card">
+            <h3>Iguazu Falls</h3>
+            <img src="./images/Iguazu Falls.jpg" alt="Iguazu Falls">
+            <p>Iguazu Falls is one of the largest and most impressive waterfall systems in the world, located on the border between Brazil and Argentina. It consists of approximately 275 individual falls.</p>
+        </article>
+
+        <article class="landmark-card">
+            <h3>Pantanal</h3>
+            <img src="./images/Pantanal.jpg" alt="Pantanal">
+            <p>The Pantanal is the world's largest tropical wetland area, known for its incredible biodiversity. It is a crucial habitat for many species of birds, fish, and mammals.</p>
+        </article>
+
+        <article class="landmark-card">
+            <h3>Lençóis Maranhenses</h3>
+            <img src="./images/Lencois.jpg" alt="Lençóis Maranhenses">
+            <p>Lençóis Maranhenses is a unique national park characterized by vast white sand dunes interspersed with seasonal freshwater lagoons, creating a stunning landscape.</p>
+        </article>
+    </div>
+
+    <button class="carousel-btn next" aria-label="Next slide"></button>
+
+    <div class="carousel-dots">
+        <button class="dot active" data-slide="0"></button>
+        <button class="dot" data-slide="1"></button>
+        <button class="dot" data-slide="2"></button>
+        <button class="dot" data-slide="3"></button>
+    </div>
+
 
     <section>
         <h2>Conservation Efforts</h2>
