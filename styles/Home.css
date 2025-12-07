@@ -206,85 +206,98 @@ body {
 }
 
 /* ===== NAVBAR ===== */
-nav {
-    width: 100%;
+.brazil-navbar {
+    background-color: #009c3b;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background: rgba(0, 158, 15, 0.9);
+    padding: 16px 32px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 }
 
-.logo {
-    background-color: transparent;
-}
-
-.logo-img {
-    height: 50px;
-    width: auto;
-    background-color: transparent;
+.brazil-logo {
+    font-size: 29px;
+    font-weight: 700;
+    color: #ffdf00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
-.logo-img:hover {
-    transform: scale(1.08) rotate(2deg);
+.brazil-logo:hover {
+    transform: scale(1.05);
 }
 
-.nav-links {
-    display: flex;
+.brazil-hamburger {
+    display: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.brazil-hamburger:hover {
+    transform: scale(1.1);
+}
+
+.brazil-hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.brazil-hamburger.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.brazil-hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.brazil-hamburger.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.brazil-nav-links {
     list-style: none;
-    gap: 30px;
-    background-color: transparent;
+    display: flex;
+    gap: 24px;
 }
 
-.nav-links li {
-    background-color: transparent;
-}
-
-.nav-links a {
+.brazil-nav-links li a {
     text-decoration: none;
     color: white;
-    background-color: transparent;
-    font-size: 16px;
     font-weight: 500;
     transition: all 0.3s ease;
+    font-size: 16px;
     position: relative;
     padding: 5px 0;
 }
 
-.nav-links a::after {
+.brazil-nav-links li a::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #ffd400;
+    background-color: #ffdf00;
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.brazil-nav-links li a:hover::after,
+.brazil-nav-links li a.active::after {
     width: 100%;
 }
 
-.nav-links a:hover {
-    color: #ffff00;
-    transform: translateY(-2px);
-}
-
-.navbar-toggler {
-    border-color: white !important;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+.brazil-nav-links li a:hover,
+.brazil-nav-links li a.active {
+    color: #ffdf00;
 }
 
 /* ===== MAIN CONTAINER ===== */
