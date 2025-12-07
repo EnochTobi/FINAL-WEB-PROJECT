@@ -321,6 +321,8 @@ body {
     transition: all 0.3s ease;
     opacity: 1;
     transform: scale(1);
+    border-top: 5px solid #009c3b;
+    /* Brazil Green */
 }
 
 .stat-card:hover {
@@ -328,11 +330,7 @@ body {
     box-shadow: 0 15px 30px rgba(0, 156, 59, 0.2);
 }
 
-.stat-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
-    animation: bounce 2s infinite;
-}
+
 
 .stat-number {
     font-size: 36px;
@@ -493,17 +491,7 @@ footer {
     }
 }
 
-@keyframes bounce {
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
 
 @keyframes pulse {
 
