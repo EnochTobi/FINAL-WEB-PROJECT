@@ -132,30 +132,27 @@ a{color:var(--accent-blue);text-decoration:underline}
 }
 
 .landmark-carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 1.5rem auto;
+    padding: 0 2.5rem;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #fff;
+}
+
+.carousel-track {
     display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    padding: 1rem 0 1.5rem;
-    scroll-snap-type: x mandatory;
-}
-
-.landmark-carousel::-webkit-scrollbar {
-    height: 6px;
-}
-
-.landmark-carousel::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 3px;
+    transition: transform 0.5s ease;
 }
 
 .landmark-card {
-    flex: 0 0 80%;
-    max-width: 320px;
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-    scroll-snap-align: center;
+    flex: 0 0 100%;
+    box-sizing: border-box;
 }
 
 .landmark-card img {
@@ -165,28 +162,74 @@ a{color:var(--accent-blue);text-decoration:underline}
 }
 
 .landmark-card h3 {
-    margin: 0.75rem;
-    padding: 0 0.9rem;
+    margin: 0.75rem 1rem 0.25rem;
     font-size: 1.05rem;
 }
 
 .landmark-card p {
-    margin: 0 0 0.9rem;
-    padding: 0 0.9rem;
-    font-size: 0.9rem;
+    margin: 0 1rem 1rem;
+    font-size: 0.95rem;
     line-height: 1.4;
+    background-color: #ccc;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.55);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn.prev {
+    left: 0.5rem;
+}
+
+.carousel-btn.next {
+    right: 0.5rem;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+    background: #333;
 }
 
 @media (min-width: 768px) {
     .landmark-carousel {
-        justify-content: center;
+        padding: 0 1.5rem;
     }
 
-    .landmark-card {
-        flex: 0 0 260px;
+.carousel.btn {
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 1.6rem
     }
 
     .landmark-card img {
-        height: 180px;
+        height: 210px;
     }
 }
